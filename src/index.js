@@ -2,12 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Login from './container/login/Login';
+import Dashboard from './container/dashboard/Dashboard'
 import reportWebVitals from './reportWebVitals';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-  <React.StrictMode>
-    <App />
+   <React.StrictMode>
+    <Dashboard />
   </React.StrictMode>
 );
 
