@@ -5,6 +5,7 @@ import App from './App';
 import Login from './container/login/Login';
 import Dashboard from './container/dashboard/Dashboard'
 import Exam from './container/exam/Exam';
+import ExamFinish from './container/examFinish/ExamFinish';
 import reportWebVitals from './reportWebVitals';
 
 
@@ -12,7 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
    <React.StrictMode>
-    <Exam />
+    <ExamFinish />
   </React.StrictMode>
 );
 
