@@ -1,71 +1,80 @@
-import { useEffect, useLayoutEffect, useState, useRef } from 'react'
-import { 
-  Wrapper,
-  PropupLoginWrapper,
-  CameraWrap,
-  CameraImg,
-  InputContainer,
-  UserIconImg,
-  Input,
-  CheckBoxWrap,
-  ButtonLogin,
-  Blank,
- } from './loginStyle'
+import { useState } from "react";
+import { CameraWrap, Checkbox, FormLogin, IconCamera, IconInputContainer, Input, InputContainer, LoginButton, Remember, RememberCheckbox, Wrapper } from "./loginStyle";
 
 const Login = () => {
-    const [state, setState] = useState({
+    const [user, setUser] = useState({
         userName: '',
         password: '',
-        isRememberMe: false,
-      })
+        isRemember: false,
+    });
 
-  //console.log(count, prevCo.current);
-  const userNameOnChange = (event) => {
-    setState({...state, userName: event.target.value})
-  }
+    const userNameOnChange = (event) => {
+        setUser({...user, userName: event.target.value})
+    }
 
-  const passwordOnChange = (event) => {
-    setState({...state, password: event.target.value})
-  }
-  
-  const remeberOnClick = (event) => {
-    setState({...state, isRememberMe: event.target.value})
-  }
+    const passwordOnChange = (event) => {
+        setUser({...user, password: event.target.value})
+    }
 
-  const loginOnClick = () => {
-    console.log("user = ", state)
-  }
+    const handleOnClickRemember = (event) => {
+        setUser({...user, isRemember: !user.isRemember})
+        console.log(user);
+    }
 
-  return (
-    <Wrapper>
-        <PropupLoginWrapper>
-          <CameraWrap>
-            <CameraImg src="images/camera.svg" alt="" className='camera-icon' />
-          </CameraWrap> 
+    const handleOnSubmit = (event) => {
+        
+    }
 
-          <InputContainer>
-            <UserIconImg src="images/userLogin.png" alt="" />
-            <Input type="text" placeholder='Username' value={state.userName} onChange={userNameOnChange }/>
-          </InputContainer>
+    console.log(user);
+    return ( 
+        <Wrapper>
+            <FormLogin>
+                <CameraWrap>
+                    <img src="images/camera.svg" />
+                </CameraWrap>
 
-          <Blank height={3} />
+                <InputContainer>
+                    <IconInputContainer>
+                        <img src="images/user login.svg"/>
+                    </IconInputContainer>
+                    
+                    <Input 
+                        type={"text"}
+                        placeholder="Username"
+                        value={user.userName}
+                        onChange={userNameOnChange}
+                        />
+                </InputContainer>
 
-          <InputContainer>
-            <UserIconImg src="images/password.png" alt="" className='password-icon' width={74}/>
-            <Input type="text" placeholder='Password' value={state.password} onChange={passwordOnChange} />
-          </InputContainer>
+                <InputContainer >
+                    <IconInputContainer>
+                        <img src="images/password.svg"/>
+                    </IconInputContainer>
+                    
+                    <Input 
+                        type={"text"} 
+                        placeholder="Password" 
+                        value={user.password}
+                        onChange={passwordOnChange}
+                    />
+                </InputContainer>
 
-          <CheckBoxWrap>
-            <input type="checkbox" className='checkbox-icon' onClick={remeberOnClick}/>
-            <span>Remember me!</span>
-          </CheckBoxWrap>
+                <RememberCheckbox>
+                    <Checkbox 
+                        type={"checkbox"}
+                        onClick={handleOnClickRemember}
+                    />
+                    <Remember>Remember</Remember>
+                </RememberCheckbox>
 
-          <Blank height={2} />
-
-          <ButtonLogin onClick={loginOnClick}>Log in</ButtonLogin>
-        </PropupLoginWrapper>
-    </Wrapper>
-  );
+                <LoginButton
+                    onSubmit={handleOnSubmit}
+                >
+                Login
+                </LoginButton>
+            </FormLogin>
+        </Wrapper>
+    );
 }
-
+ 
 export default Login;

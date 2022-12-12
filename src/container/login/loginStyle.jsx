@@ -4,105 +4,156 @@ export const Wrapper = styled.div`
     width: 100vw;
     height: 100vh;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: normal;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    background: url(images/background1.png) no-repeat center;
+    align-items: flex-end;
+    justify-content: center;
+    background: url(images/background1.png) no-repeat center center;
     background-size: cover;
 `;
 
-export const PropupLoginWrapper = styled.div`
-    position: relative;
-    width: 20em;
-    border-radius: 0.2em;
-    margin-left: 32em;
-    height: 28em;
+export const FormLogin = styled.div`
+    width: 25%;
+    height: 70%;
     background: #999595;
-    border: 2px solid #FBBC1A;
-    align-self: flex-end;
-    margin-right: 8%;
+    border: 3px solid #FBBC1A;
+    border-radius: 6px;
+    margin: 6% 10% 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    @media screen and (max-width: 1023.98px) {
+        width: 60%;
+        margin-right: 0;
+        align-self: center;
+        height: 50%;
+        margin-top: 16%;
+    }
+
+    @media screen and (max-width: 767.98px) {
+        width: 80%;
+        height: 60%;
+    }
+    
+    
 `;
 
 export const CameraWrap = styled.div`
-    position: absolute;
-    top: -12%;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 180px;
+    height: 180px;
+    transform: translateY(-50%);
     background: #999595;
+    border: 3px solid #FBBC1A;
     border-radius: 50%;
-    width: 30%;
-    height: 20%;
-    border: 2px solid #FBBC1A;
-`;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-export const CameraImg = styled.img`
-    position: absolute;
-    width: 86%;
-    left: 7%;
+    @media screen and (max-width: 767.98px) {
+        width: 100px;
+        height: 100px;
+        > img {
+            width: 80%;
+        }
+    }
+    
 `;
 
 export const InputContainer = styled.div`
-    width: 80%;
-    position: relative;
-    top: 20%;
-    margin-left: 10%;
-    height: 10%;
-    border: 3px solid #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 75%;
+    height: 100px;
+    background: white;
+    margin-top: -10%;
+    margin-bottom: 20%;
+    background: #fff;
     border-radius: 4px;
-`;
 
-export const UserIconImg = styled.img`
-    position: absolute;
-    height: 100%;
-    background-color: #fff;
-    width: ${props => props.width}px;
-`;
-
-export const Input = styled.input`
-    position: absolute;
-    left: 50%;
-    transform: translateX(-38%);
-    height: 100%;
-    width: 80%;
-    border: none;
-    background-color: #F3F1F1;
-    padding-left: 2%;
-    font-size: 24px;
-`;
-
-export const Blank = styled.div`
-    width: ${props => props.width}em;
-    height: ${props => props.height}em;
-`;
-
-export const CheckBoxWrap = styled.label`
-    cursor: pointer;
-    position: relative;
-    top: 24%;
-    left: 12%;
-    font-size: 20px;
+    @media screen and (max-width: 1023.98px) {
+        height: 80px;
+    }
     
-    .checkbox-icon {
-        margin-right: 4%;
-        transform: scale(2);
-        user-select: none;
-        cursor: pointer;
+    @media screen and (max-width: 767.98px) {
+        height: 56px;
+    }
+    
+`;
+
+export const IconInputContainer = styled.div`
+    width: 25%;
+    /* height: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 4px;
+    border: none;
+
+    > img {
+        width: 80%;
+        height: 80%;
+        object-fit: cover;
+
+        @media screen and (max-width: 1023.98px) {
+            width: 50%;
+        }     
     }
 `;
 
-export const ButtonLogin = styled.button`
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 250%);
-    width: 40%;
-    height: 12%;
-    font-size: 32px;
-    text-transform: uppercase;
-    font-weight: bold;
+export const Input = styled.input`
+    width: 75%;
+    height: 100%;
+    padding: 0;
     border: none;
     border-radius: 4px;
+    background: #F3F1F1 ;
+    padding-left: 10px;
+    font-size: 20px;
+    outline: none;
+`;
+
+export const RememberCheckbox = styled.div`
+    width: 70%;
+    height: 30px;
+    margin-top: -18%;
+    /* background: black; */
+    display: flex;
+`; 
+
+export const Checkbox = styled.input`
+    width: 8%;
+    object-fit: cover;
+    margin: 0px;
+    flex-shrink: 0;
+    border-radius: 50%;
+`;
+
+export const Remember = styled.div`
+    flex-shrink: 1;
+    align-self: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+`;
+
+export const LoginButton = styled.button`
+    width: 75%;
+    height: 10%;
+    margin-top: 10%;
+    background: #D9D9D9;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 20px;
+    border: none;
+    text-transform: uppercase;
 `;
 
 

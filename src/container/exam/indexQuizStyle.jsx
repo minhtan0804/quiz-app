@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const IndexQuizWrap = styled.div`
     width: 100%;
-    height: auto;
+    /* height: auto; */
     /* background: #fff; */
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;

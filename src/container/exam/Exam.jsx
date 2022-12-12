@@ -65,7 +65,7 @@ const Exam = () => {
             </Content>
 
             <SideBar>
-                <IndexQuiz></IndexQuiz>
+                <IndexQuiz />
 
                 <ButtonSubmit>Nộp bài</ButtonSubmit>
             </SideBar>

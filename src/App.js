@@ -1,44 +1,41 @@
 import React from "react"
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from './container/login/Login'
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import NotFound from './container/notFound/NotFound'
 import Dashboard from './container/dashboard/Dashboard'
 import Exam from './container/exam/Exam'
 import ExamFinish from './container/examFinish/ExamFinish'
+import Login from "./container/login/Login"
 
-function App() {
-  // const [count, setCount] = useState(60)
+const router = createBrowserRouter([
+  {
+    path: '/login',
+    element: <Login />,
+  },
+  {
+    path: 'dashboard',
+    element: <Dashboard />,
+  },
+  {
+    path: '/exam',
+    element: <Exam />,
+  },
+  {
+    path: '/examFinish',
+    element: <ExamFinish />,
+  },
+  {
+    path: '/',
+    element: <div>Helllo</div>,
+  },
+  {
+    path: '*',
+    element: <NotFound />,
+  }
+])
 
-  // const timerId = useRef()
-  // const prevCo = useRef()
-
-  // useEffect(() => {
-  //   //prevCo.current = count
-  // }, [count])
-
-  // const handleStart = () => {
-  //     timerId.current = setInterval(() => {
-  //       setCount(prevCo => prevCo - 1)
-  //     }, 1000)
-  // }
-
-  // const handleStop = () => {
-  //   clearInterval(timerId.current)
-  // }
-
-
-  //console.log(count, prevCo.current);
-  
+function App() {  
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/login" component={<Login/>} />
-        <Route exact path="/dashboard" component={<Dashboard/>} />
-        <Route exact path="/exam" component={<Exam/>} />
-        <Route exact path="/examFinish" component={<ExamFinish/>} />
-        <Route component={NotFound} />
-      </Routes>
-    </BrowserRouter>
+    <RouterProvider router={router}></RouterProvider>
   )
 }
 
