@@ -154,6 +154,7 @@ export const LoginButton = styled.button`
     font-size: 20px;
     border: none;
     text-transform: uppercase;
+    cursor: pointer;
 `;
 
 

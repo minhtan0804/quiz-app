@@ -44,7 +44,7 @@ export const MenuBar = styled.div`
         position: fixed;
         top: 0;
         left: 0;
-        /* transform: ${(props) => props.show ? "translateX(0)" : "translatex(-100%)" }; */
+        /* transform: ${(props) => props.show ? "translateX(0)" : "translateX(-100%)" }; */
     } 
 `;
 
@@ -89,6 +89,7 @@ export const LogoutButton = styled.button`
     font-size: 20px;
     text-transform: uppercase;
     padding: 0 40px;
+    cursor: pointer;
 `;
 
 export const Content = styled.div`
@@ -185,14 +186,15 @@ export const FilterWrap = styled.div`
 `;
 
 export const FilterSelect = styled.select`
-    width: 98%;
+    width: 95%;
     height: 100%;
     outline: none;
     border-style: none;
     border-radius: 4px;
     font-weight: 400;
     font-size: 20px;
-    margin-left: 2%;
+    margin-left: 5%;
+
 `;
 
 export const MainContent = styled.div`
@@ -223,7 +225,7 @@ export const FooterContent = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 4%;
+    margin-top: 2%;
 
     @media screen and (max-width: 1023.98px) {
         margin-bottom: 5%;

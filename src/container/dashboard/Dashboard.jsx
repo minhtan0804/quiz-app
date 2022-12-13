@@ -49,9 +49,10 @@ const Dashboard = (props) => {
 
                         <FilterWrap>
                             <FilterSelect>
-                                <option value="1">Difficult</option>
-                                <option value="2">Medium</option>
-                                <option value="3">Easy</option>
+                                <option value="1">All</option>
+                                <option value="2">Difficult</option>
+                                <option value="3">Medium</option>
+                                <option value="4">Easy</option>
                             </FilterSelect>
                         </FilterWrap>
                     </TopContent>
