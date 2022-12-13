@@ -19,7 +19,12 @@ export const Wrapper = styled.div`
 export const DashboardContainer = styled.div`
     display: flex;
     align-items: center;
-    height: calc(100% - 65px);
+    height: 100%;
+    
+    @media screen and (max-width: 1023.98px) {
+        height: calc(100% - 65px);
+    }
+    
 `;
 
 export const MenuBar = styled.div`
@@ -129,7 +134,6 @@ export const SearchWrap = styled.div`
 
     @media screen and (max-width: 1023.98px) {
         width: 100%;
-        height: 60px;
     }
     
 `;
