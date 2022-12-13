@@ -4,171 +4,225 @@ export const Wrapper = styled.div`
     width: 100vw;
     height: 100vh;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: normal;
     display: flex;
-    border: none;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (max-width: 1023.98px) {
+        min-height: 100vh;
+        height: auto;
+    }
+    
 `;
 
-export const SideMenu = styled.div`
-    width: 20%;
+export const DashboardContainer = styled.div`
+    display: flex;
+    align-items: center;
+    height: calc(100% - 65px);
+`;
+
+export const MenuBar = styled.div`
+    width: 300px;
     background: #D9D9D9;
     height: 100%;
     display: flex;
-    align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    border: none;
+    align-items: center;
+    flex-shrink: 0;
+
+    @media screen and (max-width: 1023.98px) {
+        display: none;
+        width: 270px;
+        z-index: 100;
+        position: fixed;
+        top: 0;
+        left: 0;
+        /* transform: ${(props) => props.show ? "translateX(0)" : "translatex(-100%)" }; */
+    } 
 `;
 
-
-export const TopSideMenu = styled.div`
-    width: 100%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+export const TopMenu = styled.div`
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    
 `;
 
 export const AvatarWrap = styled.div`
-    width: 60%;
-    height: 50%;
-    margin: 12% auto;
-    display: flex;
-    
-    > img {
-        margin: 0 auto;
-        height: 100%;
-        object-fit: cover;
-        align-items: center;
-    }
-`;
-
-export const InforText = styled.div`
-    font-weight: bold;
-    font-size: 20px;
     width: 80%;
-    margin-bottom: 5%;
+    margin-top: 15%;
+    /* height: 20%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
 `;
 
-export const Button = styled.div`
+export const AvatarImage = styled.img`
+    object-fit: cover;
+    margin-bottom: 30px;
+`;
+
+export const UserInfo = styled.div`
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+`;
+
+export const LogoutButton = styled.button`
     background: #C9CBCB;
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 4px;
-    padding: 4% 10%;
-    margin-bottom: 16%;
+    /* width: 20%; */
+    height: 6%;
+    margin-bottom: 12%;
+    font-weight: 400;
+    font-size: 20px;
     text-transform: uppercase;
+    padding: 0 40px;
 `;
 
 export const Content = styled.div`
-    background: #F5F5F5;
-    width: 80%;
+    background:  #C4C4C4;;
+    flex-shrink: 1;
+    width: calc(100% - 300px);
     height: 100%;
     display: flex;
+    align-items: center;
     flex-direction: column;
-    justify-content: flex-start;
-    border: none;
+
+    @media screen and (max-width: 1023.98px) {
+        width: 100%;
+        height: fit-content;
+    }
+    
 `;
 
-export const HeaderContent = styled.div`
-    /* background: gray; */
-    /* border: 2px solid #000; */
+export const TopContent = styled.div`
     width: 90%;
-    height: 7%;
-    margin: 4% auto;
+    height: 8%;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    margin-top: 2%;
+    justify-content: space-between;
+
+    @media screen and (max-width: 1023.98px) {
+        height: 72px;
+        width: 94%;
+    }
+    
 `;
 
 export const SearchWrap = styled.div`
+    height: calc(100% - 2px);
     background: #F3F1F1;
-    border-radius: 4px;
     border: 1px solid #000000;
-    width: 70%;
-    height: 100%;
+    border-radius: 4px;
+    width: 74%;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-`;
+    justify-content: space-between;
+    
 
-export const InputSearch = styled.input`
-    width: 85%;
-    height: 100%;
-    padding: 0 0 0 4%;
-    background: #F3F1F1;
-    border: none;
-    font-size: 20px;
-    border-radius: 4px 0px 0px 4px;
-`;
-
-export const ButtonWrap = styled.button`
-    width: 12%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background: white;
-    border-radius: 0px 4px 4px 0px;
-
-    > img {
-        width: 70%;
+    @media screen and (max-width: 1023.98px) {
+        width: 100%;
+        height: 60px;
     }
+    
 `;
 
-export const Blank = styled.div`
-    width: ${props => props.width}%;
-    height: ${props => props.height}%;
+export const SearchInput = styled.input`
+    padding-left: 5%;
+    padding-right: 16%;
+    border: none;
+    width: calc(70% - 50px);
+    border-radius: 4px;
+    outline: none;
+    background: #F3F1F1;
+    font-weight: 400;
+    font-size: 20px;
+    flex-shrink: 1;
+
+    @media screen and (max-width: 1023.98px) {
+        padding-right: 24%;
+    }
+    
+`;
+
+export const IconSearchWrapper = styled.div`
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16%;
+    background: #FFFFFF;
+    border-radius: 0px 4px 4px 0px;
+    flex-shrink: 0;
+`;
+
+export const IconSearch = styled.img`
+    height: 60%;
 `;
 
 export const FilterWrap = styled.div`
-    width: 30%;
-    height: 100%;
-    background: #D9D9D9;
+    height: calc(100% - 2px);
+    width: 20%;
+    background: #FFFFFF;
     border: 1px solid #000000;
     border-radius: 4px;
-    display: flex;
-    justify-content: flex-start;
+
+    @media screen and (max-width: 1023.98px) {
+        display: none;
+    }
+    
 `;
-export const FilterSelectWrap = styled.select`
-    width: 100%;
+
+export const FilterSelect = styled.select`
+    width: 98%;
     height: 100%;
-    border-radius: 4px 4px 4px 4px;
-    padding: 0 10%;
-    font-size: 24px;
-    border: none;
+    outline: none;
+    border-style: none;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 20px;
+    margin-left: 2%;
 `;
 
 export const MainContent = styled.div`
-    width: 90%;
+    width: 80%;
     height: 70%;
-    margin: 0px auto 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    border: none;
-    border-radius: 4px;
     background: #D9D9D9;
-    padding-top: 2%;
-;
-`;
-
-export const ColumnListQuiz = styled.div`
-    width: 36%;
-    height: 100%;
+    border-radius: 4px;
+    margin-top: 2%;
+    padding: 2% 5%;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    
+    @media screen and (max-width: 1023.98px) {
+        height: fit-content;
+        padding: 2%;
+        width: 90%;
+        justify-content: center;
+    }
+    
 `;
 
 export const FooterContent = styled.div`
-    width: 100%;
-    height: 4%;
-    margin-top: 1%;
+    min-width: 272px;
+    height: 32px;
+    /* padding-bottom: 5%; */
     display: flex;
     align-items: center;
     justify-content: center;
-`;
+    margin-top: 4%;
 
+    @media screen and (max-width: 1023.98px) {
+        margin-bottom: 5%;
+    }
+    
+`;

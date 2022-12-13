@@ -1,89 +1,107 @@
-import { Wrapper,
-    SideMenu,
-    Content,
-    TopSideMenu,
-    AvatarWrap,
-    InforText,
-    Button,
-    HeaderContent,
-    MainContent,
-    SearchWrap, 
-    InputSearch, 
-    ButtonWrap,
-    Blank,
-    FilterWrap,
-    FilterSelectWrap,
-    ColumnListQuiz,
-    FooterContent,
- } from "./dashboardStyle";
+import { useState } from "react";
+import ItemPage from "../../components/ItemPage/ItemPage";
+import ItemQuiz from "../../components/ItemQuiz/ItemQuiz";
+import NavBar from "../../components/NavBar/NavBar";
+import { AvatarImage, AvatarWrap, Content, DashboardContainer, FilterSelect, FilterWrap, FooterContent, IconSearch, IconSearchWrapper, LogoutButton, MainContent, MenuBar, SearchInput, SearchWrap, TopContent, UserInfo, Wrapper } from "./dashboardStyle";
 
-import ItemQuizComponent from "./ItemQuizComponent";
-import ItemPageComponent from "./ItemPageComponent";
+const Dashboard = (props) => {
+    const [isOpenMenu, setIsOpenMenu] = useState(false);
 
-const Dasnhbord = () => {
+    const openMenu = () => {
+        setIsOpenMenu(prev => !prev)
+    }
+
+
     return ( 
+
         <Wrapper>
-            <SideMenu>
-                <TopSideMenu>
+            <NavBar
+                title="Dashboard"
+                onClick={openMenu}
+            >
+                
+            </NavBar>
+
+            <DashboardContainer>
+                <MenuBar
+                    show={isOpenMenu}
+                >
                     <AvatarWrap>
-                        <img src="images/avatarUser.png" alt="" />
+                        <AvatarImage src="images/avatarUser.svg" />
+                        
+                        <UserInfo>User: MinhTân</UserInfo>
+                        
+                        <UserInfo>Point: 2488</UserInfo>
                     </AvatarWrap>
 
-                    <InforText>User: minhtan </InforText>
-                    <InforText>Point: 240/250 </InforText>
-                </TopSideMenu>
+                    <LogoutButton>Logout</LogoutButton>
+                </MenuBar>
 
-                <Button>Log out</Button>
-            </SideMenu>
+                <Content>
+                    <TopContent>
+                        <SearchWrap>
+                            <SearchInput placeholder="Search" />
 
-            <Content>
-                <HeaderContent>
-                    <SearchWrap>
-                        <InputSearch placeholder="Search"/>
+                            <IconSearchWrapper>
+                                <IconSearch src="images/search.svg"/>
+                            </IconSearchWrapper>
+                        </SearchWrap>
 
-                        <ButtonWrap>
-                            <img src="images/ButtonSearch.png" />
-                        </ButtonWrap>
-                    </SearchWrap>
+                        <FilterWrap>
+                            <FilterSelect>
+                                <option value="1">Difficult</option>
+                                <option value="2">Medium</option>
+                                <option value="3">Easy</option>
+                            </FilterSelect>
+                        </FilterWrap>
+                    </TopContent>
 
-                    <Blank width={5} height={100} />
+                    <MainContent>
+                        <ItemQuiz 
+                            title="Kiểm tra an toàn bảo mật thông tin 2"
+                            time={7}
+                            point={200}
+                            maxPoint={250}
+                        />
+                        <ItemQuiz 
+                            title="Kiểm tra an toàn bảo mật thông tin 2"
+                            time={7}
+                            point={200}
+                            maxPoint={250}
+                        />
+                        <ItemQuiz 
+                            title="Kiểm tra an toàn bảo mật thông tin 2"
+                            time={7}
+                            point={200}
+                            maxPoint={250}
+                        />
+                        <ItemQuiz 
+                            title="Kiểm tra an toàn bảo mật thông tin 2"
+                            time={7}
+                            point={200}
+                            maxPoint={250}
+                        />
+                        <ItemQuiz 
+                            title="Kiểm tra an toàn bảo mật thông tin 2"
+                            time={7}
+                            point={200}
+                            maxPoint={250}
+                        />
+                        <ItemQuiz 
+                            title="Kiểm tra an toàn bảo mật thông tin 2"
+                            time={7}
+                            point={200}
+                            maxPoint={250}
+                        />
+                    </MainContent>
 
-                    <FilterWrap>
-                        <FilterSelectWrap>
-                            <option value="1">Difficult</option>
-                            <option value="2">Medium</option>
-                            <option value="3">Easy</option>
-                        </FilterSelectWrap>
-                    </FilterWrap>
-
-                </HeaderContent>
-
-                <MainContent>
-                    <Blank width={10} height={100}  />
-
-                    <ColumnListQuiz>
-                        <ItemQuizComponent></ItemQuizComponent>
-                        <ItemQuizComponent></ItemQuizComponent>
-                        <ItemQuizComponent></ItemQuizComponent>
-                    </ColumnListQuiz>
-
-                    <Blank width={8} height={100}  />
-
-                    <ColumnListQuiz>
-                        <ItemQuizComponent></ItemQuizComponent>
-                        <ItemQuizComponent></ItemQuizComponent>
-                        <ItemQuizComponent></ItemQuizComponent>
-                    </ColumnListQuiz>
-
-                    <Blank width={10} height={100}  />
-                </MainContent>
-
-                <FooterContent>
-                    <ItemPageComponent></ItemPageComponent>
-                </FooterContent>
-            </Content>
+                    <FooterContent>
+                        <ItemPage />
+                    </FooterContent>
+                </Content>
+            </DashboardContainer>
         </Wrapper>
     );
 }
  
-export default Dasnhbord;
+export default Dashboard;
