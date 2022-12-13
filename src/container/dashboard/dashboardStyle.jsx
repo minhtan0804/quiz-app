@@ -225,9 +225,10 @@ export const FooterContent = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2%;
+    margin-top: 1%;
 
     @media screen and (max-width: 1023.98px) {
+        margin-top: 4%;
         margin-bottom: 5%;
     }
     
