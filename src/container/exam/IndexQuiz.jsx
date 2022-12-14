@@ -1,29 +1,26 @@
-import { 
-    IndexQuizWrap,
-    IndexQuizItem,
-} from "./indexQuizStyle";
+import { IndexItem, Wrapper } from "./indexQuizStyle";
 
-const IndexQuiz = () => {
-    return ( 
-        <IndexQuizWrap>
-            <IndexQuizItem background="#B6B6B6">1</IndexQuizItem>
-            <IndexQuizItem background="#B6B6B6">2</IndexQuizItem>
-            <IndexQuizItem background="#92FD9D">3</IndexQuizItem>
-            <IndexQuizItem background="#B6B6B6">4</IndexQuizItem>
-            <IndexQuizItem background="#B6B6B6">5</IndexQuizItem>
-            <IndexQuizItem>6</IndexQuizItem>
-            <IndexQuizItem background="#B6B6B6">7</IndexQuizItem>
-            <IndexQuizItem>8</IndexQuizItem>
-            <IndexQuizItem background="#B6B6B6">9</IndexQuizItem>
-            <IndexQuizItem>10</IndexQuizItem>
-            <IndexQuizItem>11</IndexQuizItem>
-            <IndexQuizItem>12</IndexQuizItem>
-            <IndexQuizItem>13</IndexQuizItem>
-            <IndexQuizItem>14</IndexQuizItem>
-            <IndexQuizItem>15</IndexQuizItem>
-            <IndexQuizItem>16</IndexQuizItem>
-            <IndexQuizItem>17</IndexQuizItem>
-        </IndexQuizWrap>
+const IndexQuiz = (props) => {
+    return (
+        <Wrapper>
+            <IndexItem background="#B6B6B6" >1</IndexItem>
+            <IndexItem background="#B6B6B6" >2</IndexItem>
+            <IndexItem background="#92FD9D" >3</IndexItem>
+            <IndexItem background="#B6B6B6" >4</IndexItem>
+            <IndexItem background="#B6B6B6" >5</IndexItem>
+            <IndexItem>6</IndexItem>
+            <IndexItem background="#B6B6B6" >7</IndexItem>
+            <IndexItem>8</IndexItem>
+            <IndexItem>9</IndexItem>
+            <IndexItem>10</IndexItem>
+            <IndexItem>11</IndexItem>
+            <IndexItem>12</IndexItem>
+            <IndexItem>13</IndexItem>
+            <IndexItem>14</IndexItem>
+            <IndexItem>15</IndexItem>
+            <IndexItem>16</IndexItem>
+            <IndexItem>17</IndexItem>
+        </Wrapper>
     );
 }
  

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { CameraWrap, Checkbox, FormLogin, IconCamera, IconInputContainer, Input, InputContainer, LoginButton, Remember, RememberCheckbox, Wrapper } from "./loginStyle";
+import Images from '../../assets/images'
+import { CameraWrap, Checkbox, FormLogin, IconInputContainer, Input, InputContainer, LoginButton, Remember, RememberCheckbox, Wrapper } from "./loginStyle";
 
 const Login = () => {
     const [user, setUser] = useState({
@@ -30,12 +31,12 @@ const Login = () => {
         <Wrapper>
             <FormLogin>
                 <CameraWrap>
-                    <img src="images/camera.svg" />
+                    <img src={Images.login.camera} alt="" />
                 </CameraWrap>
 
                 <InputContainer>
                     <IconInputContainer>
-                        <img src="images/user login.svg"/>
+                        <img src={Images.login.userLogin} alt="" />
                     </IconInputContainer>
                     
                     <Input 
@@ -46,9 +47,9 @@ const Login = () => {
                         />
                 </InputContainer>
 
-                <InputContainer >
+                <InputContainer isMobile={false}>
                     <IconInputContainer>
-                        <img src="images/password.svg"/>
+                        <img src={Images.login.passwordLock} alt="" />
                     </IconInputContainer>
                     
                     <Input 

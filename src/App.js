@@ -1,7 +1,6 @@
 import React from "react"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import NotFound from './container/notFound/NotFound'
-// import Dashboard from './container/dashboard/Dashboard'
 import Dashboard from './container/dashboard/Dashboard'
 import Exam from './container/exam/Exam'
 import ExamFinish from './container/examFinish/ExamFinish'
@@ -26,7 +25,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/',
-    element: <div>Helllo</div>,
+    element: <div>Hello</div>,
   },
   {
     path: '*',

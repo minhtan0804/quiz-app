@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
     background: #D9D9D9;
     border: 1px solid #000000;
     border-radius: 4px;
+    min-width: 230px;
 
     @media screen and (max-width: 1023.98px) {
         width: 90%;
@@ -40,6 +41,7 @@ export const InfoQuizWrap = styled.div`
     align-items: center;
     font-weight: 400;
     font-size: 16px;
+    flex-wrap: wrap;
     gap: 12%;
 `;
 
@@ -48,6 +50,7 @@ export const InfoQuiz = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    min-width : 100px;
     
 `;
 
@@ -56,7 +59,7 @@ export const IconInfoQuiz = styled.img`
 `;
 
 export const InfoItem = styled.div`
-    margin-left: 16px;   
+    margin-left: 16px;  
 `;
 
 

@@ -9,12 +9,13 @@ export const Wrapper = styled.div`
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    background: url(images/background1.png) no-repeat center center;
+    background: url(./background.png) no-repeat center center;
     background-size: cover;
 `;
 
 export const FormLogin = styled.div`
-    width: 25%;
+    width: 30%;
+    min-width: 400px;
     height: 70%;
     background: #999595;
     border: 3px solid #FBBC1A;
@@ -31,11 +32,13 @@ export const FormLogin = styled.div`
         align-self: center;
         height: 50%;
         margin-top: 16%;
+        min-width: 0;
     }
 
     @media screen and (max-width: 767.98px) {
         width: 80%;
         height: 60%;
+        min-width: 0;
     }
     
     
@@ -73,6 +76,8 @@ export const InputContainer = styled.div`
     margin-bottom: 20%;
     background: #fff;
     border-radius: 4px;
+
+    height: ${props => props.isMobile ? 56 : 80}px;
 
     @media screen and (max-width: 1023.98px) {
         height: 80px;
@@ -155,6 +160,11 @@ export const LoginButton = styled.button`
     border: none;
     text-transform: uppercase;
     cursor: pointer;
+
+    @media screen and (max-width: 1023.98px) {
+        margin-top: 4%;
+    }
+    
 `;
 
 

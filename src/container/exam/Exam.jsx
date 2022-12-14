@@ -1,75 +1,98 @@
-import { 
-    ExamWrap,
-    Content,
-    SideBar, 
-    HeaderContent,
-    ContentWrap,
-    Title,
-    TimeExist,
-    TimeLine,
-    Question,
-    AnswerForm,
-    AnswerLabel,
-    Prev,
-    Next,
-    ButtonSubmit,
-} from "./examStyle";
-
+import NavBar from "../../components/NavBar/NavBar";
+import { Answer, AnswerCheckbox, AnswerForm, AnswerLabel, Content, ExamContainer, FooterMain, HeaderContent, HeaderCountdown, HeaderTimeCountdown, HeaderTimeline, HeaderTitle, MainContent, PrevButton, Question, QuestionAndAnswer, RadomIndexButton, SideMenu, SubmitButton, TopFooter, Wrapper } from "./examStyle";
 import IndexQuiz from "./IndexQuiz";
 
-const Exam = () => {
-    return (  
-        <ExamWrap>
-            <Content>
-                <HeaderContent>
-                    <Title>Kiểm tra an toàn bảo mật thông tin lần 2</Title>
-                    <TimeExist>Còn lại: 14 phút 22 giây</TimeExist>
-                    <TimeLine></TimeLine>
-                </HeaderContent>
+const Exam = (props) => {
+    return ( 
+        <Wrapper>
+            <NavBar
+                title="Làm bài thi"
+                // onClick={openMenu}
+            >
+                
+            </NavBar>
 
-                <ContentWrap>
-                    <Question>Câu 3. Nhân viên chính thức của công ty Amela được nghỉ phép (có hưởng lương) bao nhiêu ngày một năm?</Question>
+            <ExamContainer>
+                <Content>
+                    <HeaderContent>
+                        <HeaderTitle>
+                            {/* {props.title} */}
+                            Kiểm tra an toàn bảo mật thông tin lần 2
+                        </HeaderTitle>
 
-                    <AnswerForm>
-                        <AnswerLabel>
-                            <input type="checkbox" className="answer" />
-                            <span>A. 12 ngày nếu làm đủ cả năm</span>
-                        </AnswerLabel>
-                    </AnswerForm>
+                        <HeaderCountdown>
+                            Còn lại: 14 phút 22 giây
+                        </HeaderCountdown>
 
-                    <AnswerForm>
-                        <AnswerLabel>
-                            <input type="checkbox" className="answer" />
-                            <span>B. 16 ngày nếu làm đủ cả năm</span>
-                        </AnswerLabel>
-                    </AnswerForm>
+                        <HeaderTimeline>
+                            <HeaderTimeCountdown />
+                        </HeaderTimeline>
 
-                    <AnswerForm>
-                        <AnswerLabel>
-                            <input type="checkbox" className="answer" />
-                            <span>C. Không có nghỉ phép vẫn hưởng lương</span>
-                        </AnswerLabel>
-                    </AnswerForm>
+                    </HeaderContent>
 
-                    <AnswerForm>
-                        <AnswerLabel>
-                            <input type="checkbox" className="answer" />
-                            <span>D. 8 ngày nếu làm đủ cả năm</span>
-                        </AnswerLabel>
-                    </AnswerForm>
-                    <Prev>Câu trước</Prev>
+                    <MainContent>
+                        <QuestionAndAnswer>
+                            <Question>
+                            Câu 3. Nhân viên chính thức của công ty Amela được nghỉ phép (có hưởng lương) bao nhiêu ngày một năm?
+                            </Question>
 
-                    <Next>Câu sau</Next>
-                </ContentWrap>
+                            <AnswerForm>
+                                <AnswerLabel>
+                                    <AnswerCheckbox type={"checkbox"} />
+                                    <Answer>
+                                        A. 12 ngày nếu làm đủ cả năm
+                                    </Answer>
+                                </AnswerLabel>
 
-            </Content>
+                                <AnswerLabel>
+                                    <AnswerCheckbox type={"checkbox"} />
+                                    <Answer>
+                                        A. 12 ngày nếu làm đủ cả năm
+                                    </Answer>
+                                </AnswerLabel>
 
-            <SideBar>
-                <IndexQuiz />
+                                <AnswerLabel>
+                                    <AnswerCheckbox type={"checkbox"} />
+                                    <Answer>
+                                        A. 12 ngày nếu làm đủ cả năm
+                                    </Answer>
+                                </AnswerLabel>
+                                
+                                <AnswerLabel>
+                                    <AnswerCheckbox type={"checkbox"} />
+                                    <Answer>
+                                        A. 12 ngày nếu làm đủ cả năm
+                                    </Answer>
+                                </AnswerLabel>
 
-                <ButtonSubmit>Nộp bài</ButtonSubmit>
-            </SideBar>
-        </ExamWrap>
+                            </AnswerForm>
+                        </QuestionAndAnswer>
+
+                        <FooterMain>
+                            <TopFooter>
+                                <PrevButton>
+                                    Câu trước
+                                </PrevButton>
+
+                                <PrevButton>
+                                    Câu sau
+                                </PrevButton>
+                            </TopFooter>
+
+                            <RadomIndexButton>
+                                Chuyển tiếp
+                            </RadomIndexButton>
+                        </FooterMain>
+                    </MainContent>
+                </Content>
+
+                <SideMenu>
+                    <IndexQuiz />
+
+                    <SubmitButton>Nộp bài</SubmitButton>
+                </SideMenu>
+            </ExamContainer>
+        </Wrapper>
     );
 }
  

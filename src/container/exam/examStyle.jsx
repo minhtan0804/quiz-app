@@ -1,124 +1,272 @@
 import styled from "styled-components";
 
-export const ExamWrap = styled.div`
+export const Wrapper = styled.div`
     width: 100vw;
     height: 100vh;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: normal;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    background: #ccc;
+
+    @media screen and (max-width: 1023.98px) {
+        min-height: 100vh;
+        /* height: auto; */
+    }
+    
+`;
+
+export const ExamContainer = styled.div`
+    display: flex;
+    align-items: center;
+    height: 100%;
 `;
 
 export const Content = styled.div`
     width: 70%;
     height: 100%;
-`;
-
-export const SideBar = styled.div`
-    width: 20%;
-    /* height: 80%; */
-    background: #D9D9D9;
-    padding: 4% 5%;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: space-between;
+
+    @media screen and (max-width: 1023.98px) {
+        width: 100%;
+    }
+    
 `;
 
 export const HeaderContent = styled.div`
-    height: 15%;
-    padding: 0 4%;
     background: #D9D9D9;
     border: 1px solid rgba(0, 0, 0, 0.5);
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-`;
-
-export const Title = styled.div`
-    width: 100%;
-    height: 24%;
-    margin: 2% 0px 0px;
-`;
-
-export const TimeExist = styled.div`
+    height: calc(12% - 2px);
+    padding: 3% 4% 2% 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-size: 20px;
-    font-weight: normal;
+
+    @media screen and (max-width: 1023.98px) {
+        border: none;
+        height: 6%;
+    }
+    
 `;
 
-export const TimeLine = styled.div`
-    height: 10%;
+export const HeaderTitle = styled.div`
+    font-weight: 700;
+    font-size: 24px;
+
+    @media screen and (max-width: 1023.98px) {
+        display: none;
+    }
+    
+`;
+
+export const HeaderCountdown =  styled.div`
+    margin-top: 1%;
+
+    @media screen and (max-width: 1023.98px) {
+        margin-top: 0;
+        margin-bottom: 2%;
+    }
+    
+`;
+
+export const HeaderTimeline = styled.div`
+    position: relative;
+    width: 100%;
+    height: 16px;
+    background: #BAB7B7;
+    border-radius: 4px;
+    overflow: hidden;
+`;
+
+export const HeaderTimeCountdown = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
     background: #41C54E;
-    margin-top: 2%;
 `;
 
-export const ContentWrap = styled.div`
-    width: 92%;
-    height: 76%;
-    padding: 4% 4% 2%;
-    background: #F5F5F5;    
+export const MainContent = styled.div`
+    width: calc(88% - 2px);
+    height: calc(76% - 2px);
+    background: #C4C4C4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5% 6% 5% 6%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+
+    @media screen and (max-width: 1023.98px) {
+        padding: 2%;
+        width: 96%;
+        height: 92%;
+        border: none;
+    }
+    
+`;
+
+export const QuestionAndAnswer = styled.div`
+    width: 100%;
+    flex-shrink: 1;
+    height: 80%;
 `;
 
 export const Question = styled.div`
-    line-height: 29px;
-    align-items: center;
-    padding: 2%;
+    font-weight: 700;
+    font-size: 24px;
+    width: 100%;
 `;
 
 export const AnswerForm = styled.div`
-    padding: 2% 0px 0px 6%;
-`;
-
-export const AnswerLabel = styled.div`
-    margin: 0px 2%;
-    height: 2em;
+    width: 90%;
+    margin: 4% 0% 0% 4%;
     display: flex;
-    align-items: center;
-    margin-top: 1%;
+    flex-direction: column;
+    justify-content: space-between;
 
-    .answer {
-        transform: scale(2);
-        margin-right: 2%;
+    @media screen and (max-width: 1023.98px) {
+        width: 100%;
+        margin: 0;
+        margin-top: 16%;
+        margin-left: 2%;
     }
+    
 `;
 
-export const Prev = styled.button`
-    position: fixed;
-    left: 4%;
-    top: 86%;
-    width: 12%;
-    height: 8%;
-    background: #EEE7A9;
-    border: none;
-    border-radius: 6px;
-    font-size: 24px;
-    font-weight: bold;
+export const AnswerLabel= styled.div`
+    /* background: #fff; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2%;
+
+    @media screen and (max-width: 1023.98px) {
+        margin-bottom: 6%;
+    }
+    
 `;
 
-export const Next = styled.button`
-    position: fixed;
-    width: 12%;
-    right: 34%;
-    top: 86%;
-    height: 8%;
-    background: #EEE7A9;
-    border: none;
+export const AnswerCheckbox = styled.input`
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    background: #D9D9D9;
+    border: 1px solid #000000;
     border-radius: 4px;
-    font-size: 24px;
-    font-weight: bold
 `;
 
-export const ButtonSubmit = styled.button`
-    position: fixed;
-    bottom: 4%;
-    right: 8%;
-    width: 12%;
-    height: 6%;
+export const Answer = styled.div`
+    font-weight: 400;
+    font-size: 24px;
+    margin-left: 2%;
+`;
+
+export const FooterMain = styled.div`
+    width: 100%;
+    height: 10%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 1023.98px) {
+        height: 25%;
+    }
+    
+`;
+
+export const TopFooter = styled.div`
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 1023.98px) {
+        height: 36%;
+        /* margin-bottom: 8%; */
+    }
+    
+`;
+
+export const PrevButton = styled.button`
+    height: 100%;
+    width: 15%;
+    min-width: 65px;
+    background: #EEE7A9;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 20px;
+
+    @media screen and (max-width: 1023.98px) {
+        margin: 0px 5%;
+        width: 36%;
+        height: 100%;
+    }
+    
+`;
+
+export const RadomIndexButton = styled.button`
+    width: 50%;
+    height: 35%;
     background: #9F9D9F;
     border-radius: 41px;
+    margin-bottom: 4%;
+    font-weight: 700;
+    font-size: 24px;
+    border: none;
+
+    @media screen and (min-width: 1024px) {
+        display: none;
+    }
+    
+`;
+
+
+export const SideMenu = styled.div`
+    height: calc(100% - 2px);
+    width: calc(30% - 2px);
+    min-width: 350px;
+    background: #D9D9D9;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 1023.98px) {
+        /* display: none; */
+        z-index: 1000;
+        position: fixed;
+        width: 90%;
+        height: 70%;
+        margin-left: 5%;
+    }
+    
+`;
+
+export const SubmitButton = styled.button`
+    margin-bottom: 15%;
+    width: 30%;
+    height: 6%;
+    background: #9F9D9F;
+    border-radius: 40px;
     border: none;
     font-weight: 700;
     font-size: 24px;
-    line-height: 29px;
+
+    @media screen and (max-width: 1023.98px) {
+        width: 40%;
+        height: 10%;
+    }
+    
 `;

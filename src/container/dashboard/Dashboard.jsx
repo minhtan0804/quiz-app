@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Images from "../../assets/images.js"
 import ItemPage from "../../components/ItemPage/ItemPage";
 import ItemQuiz from "../../components/ItemQuiz/ItemQuiz";
 import NavBar from "../../components/NavBar/NavBar";
@@ -27,7 +28,7 @@ const Dashboard = (props) => {
                     show={isOpenMenu}
                 >
                     <AvatarWrap>
-                        <AvatarImage src="images/avatarUser.svg" />
+                        <AvatarImage src={Images.dashboard.avatarUser} />
                         
                         <UserInfo>User: MinhTân</UserInfo>
                         
@@ -43,7 +44,7 @@ const Dashboard = (props) => {
                             <SearchInput placeholder="Search" />
 
                             <IconSearchWrapper>
-                                <IconSearch src="images/search.svg"/>
+                                <IconSearch src={Images.dashboard.searchIcon} />
                             </IconSearchWrapper>
                         </SearchWrap>
 

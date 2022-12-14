@@ -1,22 +1,28 @@
 import styled from "styled-components";
 
-export const IndexQuizWrap = styled.div`
-    width: 100%;
-    /* height: auto; */
-    /* background: #fff; */
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
+export const Wrapper = styled.div` 
+    width: 55%;
+    min-width: 320px;
+    margin: 15% auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 1023.98px) {
+        width: 90%;
+    }
+    
 `;
 
-export const IndexQuizItem = styled.div`
-    line-height: 58px;
+export const IndexItem = styled.div`
+    width: 48px;
+    height: 64px;
+    background: #D9D9D9;
+    border: 1px solid #000000;
+    border-radius: 4px;
     display: flex;
     align-items: center;
-    text-align: center;
     justify-content: center;
-    border: 1px solid #000;
-    border-radius: 4px;
-    margin: 25% 18% 0px;
+    margin: 4% 2%;
 
     background: ${props => props.background};
 `;

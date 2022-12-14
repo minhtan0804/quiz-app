@@ -231,5 +231,4 @@ export const FooterContent = styled.div`
         margin-top: 4%;
         margin-bottom: 5%;
     }
-    
 `;

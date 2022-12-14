@@ -1,10 +1,11 @@
+import Images from '../../assets/images'
 import { NavBarIcon, NavBarIconWrapper, NavBarTitle, Wrapper } from "./navBarStyle";
 
 const NavBar = (props) => {
     return (
         <Wrapper>
             <NavBarIconWrapper>
-                <NavBarIcon src="images/navBarMenu.svg" />
+                <NavBarIcon src={Images.navbar.menuIcon} />
             </NavBarIconWrapper>
 
             <NavBarTitle>{props.title}</NavBarTitle>

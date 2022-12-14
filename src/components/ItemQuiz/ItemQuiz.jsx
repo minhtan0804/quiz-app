@@ -1,3 +1,4 @@
+import Images from "../../assets/images";
 import { IconInfoQuiz, InfoItem, InfoQuiz, InfoQuizWrap, LevelQuiz, Star, Title, Wrapper } from "./itemQuizStyle";
 
 const ItemQuiz = (props) => {
@@ -7,22 +8,22 @@ const ItemQuiz = (props) => {
 
             <InfoQuizWrap>
                 <InfoQuiz>
-                    <IconInfoQuiz src="images/clockQuiz.svg" />
-                    <InfoItem>{props.time} phút</InfoItem>
+                    <IconInfoQuiz src={Images.dashboard.clockIcon} />
+                    <InfoItem>{`${props.time} phút`}</InfoItem>
                 </InfoQuiz>
 
                 <InfoQuiz>
-                    <IconInfoQuiz src="images/pointQuiz.svg" />
+                    <IconInfoQuiz src={Images.dashboard.bonusIcon} />
                     <InfoItem>{`${props.point}/${props.maxPoint}`}</InfoItem>
                 </InfoQuiz>
             </InfoQuizWrap>
 
             <LevelQuiz>
-                <Star src="images/starFill.svg" />
-                <Star src="images/starFill.svg" />
-                <Star src="images/starFill.svg" />
-                <Star src="images/starFill.svg" />
-                <Star src="images/starNoFill.svg" />
+                <Star src={Images.dashboard.starFill} />
+                <Star src={Images.dashboard.starFill} />
+                <Star src={Images.dashboard.starFill} />
+                <Star src={Images.dashboard.starFill} />
+                <Star src={Images.dashboard.starNoFill} />
             </LevelQuiz>
         </Wrapper>
     );
