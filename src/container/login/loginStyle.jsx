@@ -25,7 +25,7 @@ export const FormLogin = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
+    
     @media screen and (max-width: 1023.98px) {
         width: 60%;
         margin-right: 0;
@@ -33,12 +33,14 @@ export const FormLogin = styled.div`
         height: 50%;
         margin-top: 16%;
         min-width: 0;
+        min-height: 550px;
     }
 
     @media screen and (max-width: 767.98px) {
         width: 80%;
         height: 60%;
         min-width: 0;
+        min-height: 0;
     }
     
     
@@ -70,22 +72,13 @@ export const InputContainer = styled.div`
     flex-direction: row;
     align-items: center;
     width: 75%;
-    height: 100px;
     background: white;
     margin-top: -10%;
     margin-bottom: 20%;
     background: #fff;
     border-radius: 4px;
 
-    height: ${props => props.isMobile ? 56 : 80}px;
-
-    @media screen and (max-width: 1023.98px) {
-        height: 80px;
-    }
-    
-    @media screen and (max-width: 767.98px) {
-        height: 56px;
-    }
+    height: ${props => props.isMobile ? 60 : 100}px;
     
 `;
 
@@ -100,13 +93,9 @@ export const IconInputContainer = styled.div`
     border: none;
 
     > img {
-        width: 80%;
-        height: 80%;
+        width: ${props => props.isMobile ? 50 : 60}%;
+        height: 60%;
         object-fit: cover;
-
-        @media screen and (max-width: 1023.98px) {
-            width: 50%;
-        }     
     }
 `;
 
@@ -126,7 +115,6 @@ export const RememberCheckbox = styled.div`
     width: 70%;
     height: 30px;
     margin-top: -18%;
-    /* background: black; */
     display: flex;
 `; 
 
@@ -152,7 +140,7 @@ export const Remember = styled.div`
 export const LoginButton = styled.button`
     width: 75%;
     height: 10%;
-    margin-top: 10%;
+    margin-top: ${props => props.isMobile ? 4 : 10}%;
     background: #D9D9D9;
     border-radius: 4px;
     font-weight: 400;

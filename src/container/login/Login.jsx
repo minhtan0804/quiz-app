@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Images from '../../assets/images'
+import { isMobile } from "react-device-detect";
 import { CameraWrap, Checkbox, FormLogin, IconInputContainer, Input, InputContainer, LoginButton, Remember, RememberCheckbox, Wrapper } from "./loginStyle";
 
 const Login = () => {
@@ -27,6 +28,7 @@ const Login = () => {
     }
 
     console.log(user);
+    console.log(isMobile);
     return ( 
         <Wrapper>
             <FormLogin>
@@ -34,9 +36,9 @@ const Login = () => {
                     <img src={Images.login.camera} alt="" />
                 </CameraWrap>
 
-                <InputContainer>
+                <InputContainer isMobile={isMobile}>
                     <IconInputContainer>
-                        <img src={Images.login.userLogin} alt="" />
+                        <img src={Images.login.userLogin} isMobile={isMobile} alt="" />
                     </IconInputContainer>
                     
                     <Input 
@@ -47,9 +49,9 @@ const Login = () => {
                         />
                 </InputContainer>
 
-                <InputContainer isMobile={false}>
+                <InputContainer isMobile={isMobile}>
                     <IconInputContainer>
-                        <img src={Images.login.passwordLock} alt="" />
+                        <img src={Images.login.passwordLock} isMobile={isMobile} alt="" />
                     </IconInputContainer>
                     
                     <Input 
@@ -70,6 +72,7 @@ const Login = () => {
 
                 <LoginButton
                     onSubmit={handleOnSubmit}
+                    isMobile={isMobile}
                 >
                 Login
                 </LoginButton>
