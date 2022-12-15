@@ -1,29 +1,20 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    width: calc(34%);
-    height: calc(24%);
+    width: ${props => props.isMobile ? 90 : 34}%;
+    height: ${props => props.isMobile ? 15 : 24}%;
     background: #fff;
-    margin: 0px 5% 3% 5%;
+    margin: ${props => props.isMobile ? '0px 0px 8% 0px' : '0px 5% 3% 5%'};  
     display: flex;
     flex-direction: column;
     font-weight: 500;
     font-size: 20px;
     align-items: center;
-    padding: 1% 2%;
+    padding: ${props => props.isMobile ? '2% 4%' : '1% 2%'};  
     background: #D9D9D9;
     border: 1px solid #000000;
     border-radius: 4px;
-    min-width: 230px;
-
-    @media screen and (max-width: 1023.98px) {
-        width: 90%;
-        padding: 2% 4%;
-        height: 15%;
-        margin: 0;
-        margin-bottom: 8%;
-    }
-    
+    min-width: 230px;    
 `;
 
 export const Title = styled.div`
@@ -66,12 +57,7 @@ export const InfoItem = styled.div`
 export const LevelQuiz = styled.div`
     align-self: flex-start;
     height: 32px;
-    margin-top: 10%;
-
-    @media screen and (max-width: 1023.98px) {
-        margin-top: 5%;
-    }
-    
+    margin-top: ${props => props.isMobile ? 5 : 10}%;
 `;
 
 export const Star = styled.img`

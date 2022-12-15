@@ -1,9 +1,10 @@
+import { isMobile } from 'react-device-detect';
 import Images from '../../assets/images'
 import { NavBarIcon, NavBarIconWrapper, NavBarTitle, Wrapper } from "./navBarStyle";
 
 const NavBar = (props) => {
     return (
-        <Wrapper>
+        <Wrapper isMobile={isMobile} >
             <NavBarIconWrapper>
                 <NavBarIcon src={Images.navbar.menuIcon} />
             </NavBarIconWrapper>

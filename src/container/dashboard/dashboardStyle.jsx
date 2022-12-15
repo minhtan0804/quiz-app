@@ -2,30 +2,27 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     width: 100vw;
-    height: 100vh;
+    min-height: ${props => props.isMobile ? '100vh' : '0px'};
+    height: ${props => props.isMobile ? 'auto' : '100vh'};
     font-size: 24px;
     font-weight: normal;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    @media screen and (max-width: 1023.98px) {
-        min-height: 100vh;
-        height: auto;
-    }
     
 `;
 
 export const DashboardContainer = styled.div`
     display: flex;
     align-items: center;
-    height: 100%;
-    
-    @media screen and (max-width: 1023.98px) {
-        height: calc(100% - 65px);
-    }
-    
+    height: ${props => props.isMobile ? 'calc(100% - 65px)' : '100%'}; 
 `;
+
+export const MenuBarWrap = styled.div` 
+    display: ${props => props.isMobile ? 'none' : 'flex'};
+    width: 300px;
+    height: 100%;
+`; 
 
 export const MenuBar = styled.div`
     width: 300px;
@@ -82,7 +79,6 @@ export const LogoutButton = styled.button`
     background: #C9CBCB;
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 4px;
-    /* width: 20%; */
     height: 6%;
     margin-bottom: 12%;
     font-weight: 400;
@@ -95,53 +91,35 @@ export const LogoutButton = styled.button`
 export const Content = styled.div`
     background:  #C4C4C4;;
     flex-shrink: 1;
-    width: calc(100% - 300px);
-    height: 100%;
+    width: ${props => props.isMobile ? "100%" : 'calc(100% - 300px)'};
+    height: ${props => props.isMobile ? 'fit-content' : '100%'};
     display: flex;
     align-items: center;
-    flex-direction: column;
-
-    @media screen and (max-width: 1023.98px) {
-        width: 100%;
-        height: fit-content;
-    }
-    
+    flex-direction: column;    
 `;
 
 export const TopContent = styled.div`
-    width: 90%;
-    height: 8%;
+    width: ${props => props.isMobile ? '94%' : '90%'};
+    height: ${props => props.isMobile ? '72px' : '8%'};
     display: flex;
     align-items: center;
     margin-top: 2%;
-    justify-content: space-between;
-
-    @media screen and (max-width: 1023.98px) {
-        height: 72px;
-        width: 94%;
-    }
-    
+    justify-content: space-between;    
 `;
 
 export const SearchWrap = styled.div`
+    width: ${props => props.isMobile ? '100%' : '74%'};
     height: calc(100% - 2px);
     background: #F3F1F1;
     border: 1px solid #000000;
     border-radius: 4px;
-    width: 74%;
     display: flex;
     justify-content: space-between;
-    
-
-    @media screen and (max-width: 1023.98px) {
-        width: 100%;
-    }
-    
 `;
 
 export const SearchInput = styled.input`
     padding-left: 5%;
-    padding-right: 16%;
+    padding-right: ${props => props.isMobile ? 24 : 16}%;
     border: none;
     width: calc(70% - 50px);
     border-radius: 4px;
@@ -150,11 +128,6 @@ export const SearchInput = styled.input`
     font-weight: 400;
     font-size: 20px;
     flex-shrink: 1;
-
-    @media screen and (max-width: 1023.98px) {
-        padding-right: 24%;
-    }
-    
 `;
 
 export const IconSearchWrapper = styled.div`
@@ -178,11 +151,7 @@ export const FilterWrap = styled.div`
     background: #FFFFFF;
     border: 1px solid #000000;
     border-radius: 4px;
-
-    @media screen and (max-width: 1023.98px) {
-        display: none;
-    }
-    
+    display: ${props => props.isMobile ? 'none' : 'block'};
 `;
 
 export const FilterSelect = styled.select`
@@ -198,37 +167,24 @@ export const FilterSelect = styled.select`
 `;
 
 export const MainContent = styled.div`
-    width: 80%;
-    height: 70%;
+    width: ${props => props.isMobile ? 90 : 80}%;
+    height: ${props => props.isMobile ? 'fit-content' : '70%'};
     background: #D9D9D9;
     border-radius: 4px;
     margin-top: 2%;
-    padding: 2% 5%;
+    padding: ${props => props.isMobile ? '2%' : '2% 5%'};
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    
-    @media screen and (max-width: 1023.98px) {
-        height: fit-content;
-        padding: 2%;
-        width: 90%;
-        justify-content: center;
-    }
-    
+    justify-content: ${props => props.isMobile ? 'center' : 'space-between'};
 `;
 
 export const FooterContent = styled.div`
     min-width: 272px;
     height: 32px;
-    /* padding-bottom: 5%; */
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1%;
-
-    @media screen and (max-width: 1023.98px) {
-        margin-top: 4%;
-        margin-bottom: 5%;
-    }
+    margin-top: ${props => props.isMobile ? 4 : 1}%;
+    margin-bottom: ${props => props.isMobile ? 5 : 0}%;
 `;

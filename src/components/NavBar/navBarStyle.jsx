@@ -9,11 +9,7 @@ export const Wrapper = styled.div`
     top: 0;
     align-items: center;
     text-align: center;
-    display: none;
-
-    @media screen and (max-width: 1023.98px) {
-        display: flex;
-    }
+    display: ${props => props.isMobile ? 'flex' : 'none'};
 `;
 
 export const NavBarIconWrapper = styled.div`

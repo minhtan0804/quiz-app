@@ -1,9 +1,10 @@
+import { isMobile } from "react-device-detect";
 import Images from "../../assets/images";
 import { IconInfoQuiz, InfoItem, InfoQuiz, InfoQuizWrap, LevelQuiz, Star, Title, Wrapper } from "./itemQuizStyle";
 
 const ItemQuiz = (props) => {
     return (  
-        <Wrapper>
+        <Wrapper isMobile={isMobile} >
             <Title>{props.title}</Title>
 
             <InfoQuizWrap>
@@ -18,7 +19,7 @@ const ItemQuiz = (props) => {
                 </InfoQuiz>
             </InfoQuizWrap>
 
-            <LevelQuiz>
+            <LevelQuiz isMobile={isMobile} >
                 <Star src={Images.dashboard.starFill} />
                 <Star src={Images.dashboard.starFill} />
                 <Star src={Images.dashboard.starFill} />
