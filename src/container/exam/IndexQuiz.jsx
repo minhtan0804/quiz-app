@@ -1,11 +1,12 @@
+import { isMobile } from "react-device-detect";
 import { IndexItem, Wrapper } from "./indexQuizStyle";
 
 const IndexQuiz = (props) => {
     return (
-        <Wrapper>
+        <Wrapper isMobile={isMobile} >
             <IndexItem background="#B6B6B6" >1</IndexItem>
             <IndexItem background="#B6B6B6" >2</IndexItem>
-            <IndexItem background="#92FD9D" >3</IndexItem>
+            <IndexItem background="#92FD9D" border={2} >3</IndexItem>
             <IndexItem background="#B6B6B6" >4</IndexItem>
             <IndexItem background="#B6B6B6" >5</IndexItem>
             <IndexItem>6</IndexItem>

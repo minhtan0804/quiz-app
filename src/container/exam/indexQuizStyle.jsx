@@ -2,15 +2,11 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div` 
     width: 55%;
+    width: ${props => props.isMobile ? 90 : 55}%;
     min-width: 320px;
     margin: 15% auto;
     display: flex;
     flex-wrap: wrap;
-
-    @media screen and (max-width: 1023.98px) {
-        width: 90%;
-    }
-    
 `;
 
 export const IndexItem = styled.div`
@@ -25,4 +21,5 @@ export const IndexItem = styled.div`
     margin: 4% 2%;
 
     background: ${props => props.background};
+    border: ${props => props.border}px solid #000000;
 `;
